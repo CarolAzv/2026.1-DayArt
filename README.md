@@ -1,10 +1,21 @@
 # 2026.1-Aplica-es_com_Interfaces_Ricas
 
-<<<<<<< HEAD
-Lista de comandos: django-admin startproject [nome] python manage.py runserver python manage.py startapp [nome]
+# Day'art
 
-Lista de migrate: python manage.py migrate python manage.py makemigrations [nome] python manage.py sqlmigrate [nome] 0001 python manage.py migrate
-=======
-node --version deve ser v24.13.0
+<br/>
+Um mostruario de loja online para artesanatos em tecido feito bem aqui no Nordeste. A plataforma oferece tantos produtos já prontos como um mostruario para você decedir qual presentinho é perfeito pra você para encomendar com certeza que felizidade vem ai
+<br/>
+<br/>
 
->>>>>>> c5823daa5b9aa5b4a0e5626e4d119889f6a3455e
+# Formas de Contato
+
+Carolina Azevedo - Whatsapp (84) 99613-2365
+
+# Documentação
+
+1. [Documento de Visão](documentação/visao/doc-visao.md)
+2. [Modelo de Casos de Uso]
+
+# Manual da Desenvolvedor
+
+[Orientações para os desenvolvedores do projeto](doc/guia-ds/guia.md)
