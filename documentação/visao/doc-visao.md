@@ -92,26 +92,26 @@
 
 | Código | Nome | Descrição | Prioridade |
 | :----: | :--: | :-------: | :--------: |
-| RF01 | Cadastro | Visitantes poderão fazer cadastro | Alta |
-| RF02 | Login | Usuários poderão fazer login | Alta |
-| RF03 | Logout | Usuários poderão fazer logout | Alta |
-| RF04 | Pesquisar produto |  Usuários poderão buscar produtos por filtros ou a barra de pesquisa | Alta |
+| RF01 | Cadastro | Visitantes podem cadastrar uma conta | Alta |
+| RF02 | Login | Usuários podem fazer login | Alta |
+| RF03 | Logout | Usuários podem fazer logout | Alta |
+| RF04 | Pesquisar produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Alta |
 | RF05 | Página do produto | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Alta |
-| RF06 | Avaliar produto | Produtos comprados podem ser avaliados por compradores | Média |
-| RF07 | Perfil do usuário | Usuários cadastrados devem poder ver sua própria página de perfil | Alta |
-| RF09 | Adicionar ao carrinho | Usuários poderão adicionar produtos ativados no carrinho | Alta |
-| RF10 | Finalizar compra | Usuários com itens no carrinho poderão finalizar a compra e ter um pedido  | Alta |
+| RF06 | Perfil do usuário | Usuários cadastrados devem poder ver sua própria página de perfil | Alta |
+| RF07 | Adicionar ao carrinho | Usuários podem adicionar produtos ativados no carrinho | Alta |
+| RF08 | Finalizar compra | Usuários com itens no carrinho podem finalizar a compra e ter um pedido  | Alta |
+| RF09 | Avaliar produto | Produtos comprados podem ser avaliados por compradores | Média |
+| RF10 | Adicionar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Média |
 | RF11 | Adicionar estoque | Administração deve poder adicionar estoque a um produto existente | Média |
-| RF13 | Adicionar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Média |
-| RF14 | Desativar produto | Administração pode desativar produtos, produtos desativados funcionam somente como mostruário | Baixa |
-| RF15 | Ativar produto | Administração pode ativar produtos, produtos ativados têm estoque e estão à venda | Baixa |
-| RF16 | Deletar produto | Administração pode deletar um produto, removendo do mostruário | Baixa |
-| RF17 | Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Alta |
-| RF18 | Chat de encomenda | Usuários e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Alta |
-| RF19 | Confirmar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Média |
-| RF20 | Rejeitar encomenda | Administração poderá rejeitar uma encomenda aberta, fechando a encomenda | Média |
-| RF21 | Cancelar encomenda | Usuário poderá cancelar uma encomenda aberta, fechando a encomenda | Baixa |
-| RF22 | Editar página do produto | Administração pode editar uma página de produto para atualizar sua informação, mudar imagens, editar a descrição e adicionar estoque | Alta |
+| RF12 | Editar página do produto | Administração pode editar uma página de produto para atualizar suas informações | Média |
+| RF13 | Desativar produto | Administração pode desativar produtos, produtos desativados funcionam somente como mostruário | Média |
+| RF14 | Ativar produto | Administração pode ativar produtos, produtos ativados têm estoque e estão à venda | Média |
+| RF15 | Deletar produto | Administração pode deletar um produto, removendo do mostruário | Baixa |
+| RF16 | Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Baixa |
+| RF17 | Chat de encomenda | Usuários e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Baixa |
+| RF18 | Confirmar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Baixa |
+| RF19 | Rejeitar encomenda | Administração poderá rejeitar uma encomenda aberta, fechando a encomenda | Baixa |
+| RF20 | Cancelar encomenda | Usuário poderá cancelar uma encomenda aberta, fechando a encomenda | Baixa |
 
  **Prioridade**: alta, média ou baixa
 
