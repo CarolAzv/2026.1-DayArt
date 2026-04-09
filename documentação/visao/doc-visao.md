@@ -7,12 +7,12 @@
 
 ## 1\. Visão Geral do Sistema Proposto
 
-   Day'art é um site de mostruário e vendas online de artesanato com tecido e bordado personalizado do cliente
+   Day'art é um site de mostruário e encomendas on-line de artesanato com tecidos e bordados personalizado
 
 ## 2\. Descrição do Problema  
 | | |  
 | :-: | :-: |  
-| **Problema** | A falta de um espaço para o cliente dedicar à exposição e venda de seus artesanatos. |  
+| **Problema** | A falta de um ambiente dedicado para o cliente poder expor e vender seus artesanatos. |  
 | **Afeta** | O cliente; Consumidores interessados em produtos de tecidos artesanais. |    
 | **Impacta** | Renda e hobby do cliente; Consumidores interessados em produtos feitos a mão. |  
 | **Solução** | Criação de um site para mostruário e vendas virtual voltado para o artesanato com tecido/bordado. |
@@ -22,7 +22,7 @@
 | Usuário | Descrição | Responsabilidades |  
 | :-----: | :-------: | :---------------: |
 | Visitantes | Visitantes serão as pessoas que não possuem uma conta. Eles poderão entrar no site, ver os produtos, utilizar toda a funcionalidade de pesquisar e criar uma conta| Visitantes poderão acessar o site como um mostruário sem acesso à parte de vendas. |
-| Usuários | Usuários serão as pessoas com uma conta registrada. Eles além de possuir todas as funcionalidades do visitante, exceto a criação de uma conta, eles terão acesso a um carrinho, poderão adicionar ou editar informações sobre cartões de crédito, editar a localização e adicionar itens à lista de desejo| Os usuários deverão adicionar informações sobre a localização e forma de pagamento. |
+| Clientes | Usuários serão as pessoas com uma conta registrada. Eles além de possuir todas as funcionalidades do visitante, exceto a criação de uma conta, eles terão acesso a um carrinho, poderão adicionar ou editar informações sobre cartões de crédito, editar a localização e adicionar itens à lista de desejo| Os usuários deverão adicionar informações sobre a localização e forma de pagamento. |
 | Administração | A administração será responsável por adicionar novos itens, gerenciar o estoque e concluir pedidos. A administração também poderá ver dados da loja como número de visitas e que itens estão em uma lista de desejo. | Moderação e gerenciamento do site e conclusão de pedidos |
 
 ## 4\. Descrição do Ambiente dos Usuários
@@ -30,31 +30,31 @@
 | Usuário | Ambiente operacional |  
 | :-----: | :------------------: |
 | Visitantes | Terá acesso à home e às páginas dos produtos além do acesso aos filtros e à pesquisa |
-| Usuários | Além de ter acesso à home, às páginas dos produtos, aos filtros e à pesquisa, terão a página do perfil, o carrinho e a encomenda |
+| Clientes | Além de ter acesso à home, às páginas dos produtos, aos filtros e à pesquisa, terão a página do perfil, o carrinho e a encomenda |
 | Administração | Terá acesso a todas as páginas do sistema e funcionalidades e páginas para a criação de uma nova listagem e visualização de encomendas com suas conversas. |
 
 ## 5\. Principais Necessidades dos Usuários
 
 1\. **Visitantes**  
-   \- Acessar o site livremente sem precisar realizar um Login ou Cadastro;
-   \- Visualizar e pesquisar por produtos;
+   \- Acessa o site livremente sem precisar realizar um Login ou Cadastro;
+   \- Visualiza e pesquisa por produtos;
    \- Decidir se há necessidade de criar uma conta como usuário.
 
-2\. **Usuários**  
-   \- Possuir conta registrada e autenticada por Login;
-   \- Visualizar e pesquisar por produtos;  
+2\. **Clientes**  
+   \- Possui conta registrada e autenticada por Login;
+   \- Visualiza e pesquisa por produtos;  
    \- Adicionar produtos ao carrinho e conseguir finalizar uma compra.
    \- Avaliar produtos comprados.
    \- Começar uma conversa com a administração para fazer uma encomenda
 
 3\. **Administradores**  
    \- Realizar a manutenção do site;  
-   \- Monitorar atividades dos usuários e manter a cordialidade;  
-   \- Desativar páginas de produtos que não têm mais estoque;
-   \- Deletar páginas de produtos que não serão mais produzidos;  
+   \- Monitorar atividades de usuários e manter a cordialidade;  
+   \- Ativar páginas de produtos que não têm mais estoque;
+   \- Deletar páginas de produtos que não são mais produzidos;  
    \- Aumentar o estoque quando necessário;  
    \- Atuar como suporte ao cliente;
-   \- Conversar com clientes para confirmar uma encomenda;
+   \- Conversar com clientes para aceitar ou recusar encomendas;
    \- Concluir pedidos;
 
 ## 6\. Alternativas Concorrentes
@@ -71,7 +71,7 @@
       \- Abre páginas no desktop
       \- Quantidade excessiva de tags
 
-1\. **Paipç**
+1\. **Paiol**
 
    1.1 **Pontos positivos**  
       \- Aparência mais focada em artesanato e à cultura envolvida
@@ -84,8 +84,8 @@
 
 | ID  | Regra | Descrição |  
 | :-: | :---: | :-------: |
-| RN01 | :---: | Encomendas de Usuários precisam ser pagas 50% adiantado para evitar perdas |
-| RN02 | :---: | Encomendas de Usuários pagarão os restantes 50% após a finalização do produto |
+| RN01 | :---: | Encomendas precisam ser pagas 50% adiantado para evitar perdas e garantir o dinheiro de materiais |
+| RN02 | :---: | O resto do pagamento da encomenda podera ser feito apois o termino da produção |
 | RN03 | :---: | Produtos devem ser desativados automaticamente após a venda completa do estoque |
 
 ## 8\. Requisitos Funcionais
@@ -95,23 +95,24 @@
 | RF01 | Cadastro | Visitantes podem cadastrar uma conta | Alta |
 | RF02 | Login | Usuários podem fazer login | Alta |
 | RF03 | Logout | Usuários podem fazer logout | Alta |
-| RF04 | Pesquisar produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Alta |
+| RF04 | Pesquisa de produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Alta |
 | RF05 | Página do produto | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Alta |
-| RF06 | Perfil do usuário | Usuários cadastrados devem poder ver sua própria página de perfil | Alta |
-| RF07 | Adicionar ao carrinho | Usuários podem adicionar produtos ativados no carrinho | Alta |
-| RF08 | Finalizar compra | Usuários com itens no carrinho podem finalizar a compra e ter um pedido  | Alta |
-| RF09 | Avaliar produto | Produtos comprados podem ser avaliados por compradores | Média |
-| RF10 | Adicionar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Média |
-| RF11 | Adicionar estoque | Administração deve poder adicionar estoque a um produto existente | Média |
-| RF12 | Editar página do produto | Administração pode editar uma página de produto para atualizar suas informações | Média |
-| RF13 | Desativar produto | Administração pode desativar produtos, produtos desativados funcionam somente como mostruário | Média |
-| RF14 | Ativar produto | Administração pode ativar produtos, produtos ativados têm estoque e estão à venda | Média |
-| RF15 | Deletar produto | Administração pode deletar um produto, removendo do mostruário | Baixa |
-| RF16 | Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Baixa |
-| RF17 | Chat de encomenda | Usuários e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Baixa |
-| RF18 | Confirmar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Baixa |
-| RF19 | Rejeitar encomenda | Administração poderá rejeitar uma encomenda aberta, fechando a encomenda | Baixa |
-| RF20 | Cancelar encomenda | Usuário poderá cancelar uma encomenda aberta, fechando a encomenda | Baixa |
+| RF06 | Perfil do usuário | Usuários cadastrados podem ver sua própria página de perfil | Alta |
+| RF07 | Adicionar ao carrinho | Clientes podem adicionar produtos ativados no carrinho | Alta |
+| RF08 | Finalizar compra | Clientes com itens no carrinho podem finalizar a compra os itens pedidos | Alta |
+| RF09 | Adicionar cartão | Clientes podem adicionar um cartão a conta para facilitar e agilizar pagamentos | Alta |
+| RF10 | Avaliar produto | Produtos comprados podem ser avaliados por compradores | Média |
+| RF11 | Criar produto | Administração podem criar um novo produto com nome, descrição, imagens e estoque | Média |
+| RF12 | Adicionar estoque | Administração podem adicionar estoque a um produto existente | Média |
+| RF13 | Editar página do produto | Administração podem editar uma página de produto para atualizar suas informações | Média |
+| RF14 | Produto Desativo | Administração podem desativar produtos, produtos desativados não tem estoque e funcionam somente como mostruário | Média |
+| RF15 | Produto Ativo | Administração podem ativar produtos, produtos ativados têm estoque e estão à venda | Média |
+| RF16 | Deletar produto | Administração podem deletar um produto, removendo do mostruário | Baixa |
+| RF17 | Começar encomenda | Clientes podem começar uma encomenda na página de perfil | Baixa |
+| RF18 | Chat de encomenda | Clientes e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Baixa |
+| RF19 | Aceitar encomenda | Administração podem Aceitar uma encomenda aberta, transformando ela em um pedido | Baixa |
+| RF20 | Rejeitar encomenda | Administração podem rejeitar uma encomenda aberta, fechando a encomenda | Baixa |
+| RF21 | Cancelar encomenda | Usuário podem cancelar uma encomenda aberta, fechando a encomenda | Baixa |
 
  **Prioridade**: alta, média ou baixa
 
@@ -120,6 +121,7 @@
 | Código | Nome | Descrição | Categoria | Classificação |  
 | :----: | :--: | :-------: | :-------: | :-----------: |
 | NF01 | Boas práticas de programação | O site deve ser montado utilizando boas práticas de programação e com escalabilidade em mente  | Manutenabilidade | Desejável |
+| :----: | :--: | :-------: | :-------: | :-----------: |
 
 \> **Categoria**: usabilidade, confiabilidade, performance, suportabilidade, restrição de projeto, implementação, interface e requisito físico \- segundo classificação \[FURP+\](https://pt.wikipedia.org/wiki/FURPS).
 
