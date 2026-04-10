@@ -2,12 +2,12 @@
 
 01. Página do produto | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Prioridade Alta |
 02. Pesquisar produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Prioridade Alta |
-03. Adicionar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Prioridade Média |
+03. Criar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Prioridade Alta |
 04. Cadastro | Visitantes podem cadastrar uma conta | Prioridade Alta |
 05. Login | Usuários podem fazer login | Prioridade Alta |
 06. Logout | Usuários podem fazer logout | Prioridade Alta |
 07. Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Prioridade Alta |
-08. encomenda pelo chat de encomenda | Prioridade Alta |
+08. Chat de encomenda | Clientes e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Prioridade Alta |
 09. Confirmar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Prioridade Alta |
 10. Rejeitar encomenda | Administração poderá rejeitar uma encomenda aberta, fechando a encomenda | Prioridade Média |
 11. Cancelar encomenda | Usuário poderá cancelar uma encomenda aberta, fechando a encomenda | Prioridade Média |

@@ -94,12 +94,12 @@
 | :----: | :--: | :-------: | :--------: |
 | RF01 | Página do produto | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Alta |
 | RF02 | Pesquisar produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Alta |
-| RF03 | Adicionar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Alta |
+| RF03 | Criar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Alta |
 | RF04 | Cadastro | Visitantes podem cadastrar uma conta | Alta |
 | RF05 | Login | Usuários podem fazer login | Alta |
 | RF06 | Logout | Usuários podem fazer logout | Alta |
 | RF07 | Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Alta |
-| RF08 | encomenda pelo chat de encomenda | Alta |
+| RF08 | Chat de encomenda | Clientes e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Alta |
 | RF09 | Confirmar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Alta |
 | RF10 | Rejeitar encomenda | Administração poderá rejeitar uma encomenda aberta, fechando a encomenda | Média |
 | RF11 | Cancelar encomenda | Usuário poderá cancelar uma encomenda aberta, fechando a encomenda | Média |
