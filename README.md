@@ -3,7 +3,7 @@
 # Day'art
 
 <br/>
-Um mostruario de loja online para artesanatos em tecido feito bem aqui no Nordeste. A plataforma oferece tantos produtos já prontos como um mostruario para você decedir qual presentinho é perfeito pra você para encomendar com certeza que felizidade vem ai
+Um mostruário e espaço de encomendas de artesanatos em tecido nordestinos. A plataforma oferece tantos produtos já prontos como um mostruario para você decedir qual presentinho é perfeito pra você para encomendar com certeza que felizidade vem ai
 <br/>
 <br/>
 
