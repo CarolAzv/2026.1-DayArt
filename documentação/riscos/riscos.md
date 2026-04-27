@@ -1,4 +1,4 @@
-# Lista de Riscos
+## Lista de Riscos
 
 * Pausa médica
 * Manutenção de equipamento
