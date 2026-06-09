@@ -1,7 +1,7 @@
 # Lista de comandos: 
-    django-admin startproject [nome] 
-    python manage.py runserver python 
-    manage.py startapp [nome]
+    npm install -g @angular/cli
+    npm install primeng @primeuix/themes
+
 
 # Lista de migrate: 
     python manage.py migrate 
