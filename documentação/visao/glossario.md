@@ -3,6 +3,7 @@
 | Termo | Explicação |
 | Mostruário | é um expositor ou vitrine usada para exibir mercadorias |
 | Clientes | Usuários cadastrados que possuim um carrinho e podem fazer uma encomenda  |
+| Administração | Usuário responsavel por manter e atualizar o site e conversar com clientes para fechar encomendas |
 | Carrinho | Carrinho de compras virtual, permite colocar produtos em estoque no seu carrinho para fazer uma compra |
 | Encomenda | Pedido personalizado que pode ser feito com a Administração, acessível pelo perfil do usuário |
 | Ativo | Um produto ativo é um produto a qual possui um estoque, produtos ativos podem ser adicionados ao carrinho e comprados |

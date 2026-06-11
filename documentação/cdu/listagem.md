@@ -1,11 +1,11 @@
 # Listagem dos CDUs em ordem decrescente de prioridade, com as CDUs mais importantes em cima e diminuindo ao decer
 
-01. Página do produto | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Prioridade Alta |
-02. Pesquisar produto |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Prioridade Alta |
-03. Criar produto | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Prioridade Alta |
-04. Cadastro | Visitantes podem cadastrar uma conta | Prioridade Alta |
-05. Login | Usuários podem fazer login | Prioridade Alta |
-06. Logout | Usuários podem fazer logout | Prioridade Alta |
+01. Página do produto (documentação/cdu/cdu-01/detalhamento-01.md) | todos os produtos devem ter a própria página, mostrando informações e imagens do produto | Prioridade Alta |
+02. Pesquisar produto (documentação/cdu/cdu-02/detalhamento-02.md) |  Usuários podem buscar produtos por filtros ou a barra de pesquisa | Prioridade Alta |
+03. Criar produto (documentação/cdu/cdu-03/detalhamento-03.md) | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Prioridade Alta |
+04. Cadastro (documentação/cdu/cdu-04/detalhamento-04.md) | Visitantes podem cadastrar uma conta | Prioridade Alta |
+05. Login (documentação/cdu/cdu-05/detalhamento-05.md) | Usuários podem fazer login | Prioridade Alta |
+06. Logout (documentação/cdu/cdu-06/detalhamento-06.md) | Usuários podem fazer logout | Prioridade Alta |
 07. Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Prioridade Alta |
 08. Chat de encomenda | Clientes e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Prioridade Alta |
 09. Aceitar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Prioridade Alta |
