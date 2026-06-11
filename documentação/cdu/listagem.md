@@ -5,7 +5,7 @@
 03. Criar produto (documentação/cdu/cdu-03/detalhamento-03.md) | Administração pode adicionar um novo produto com nome, descrição, imagens e estoque | Prioridade Alta |
 04. Cadastro (documentação/cdu/cdu-04/detalhamento-04.md) | Visitantes podem cadastrar uma conta | Prioridade Alta |
 05. Login (documentação/cdu/cdu-05/detalhamento-05.md) | Usuários podem fazer login | Prioridade Alta |
-06. Logout (documentação/cdu/cdu-05/detalhamento-05.md) | Usuários podem fazer logout | Prioridade Alta |
+06. Logout (documentação/cdu/cdu-06/detalhamento-06.md) | Usuários podem fazer logout | Prioridade Alta |
 07. Começar encomenda | Usuários podem começar uma encomenda na página de perfil | Prioridade Alta |
 08. Chat de encomenda | Clientes e Administração poderão conversar sobre a encomenda pelo chat de encomenda | Prioridade Alta |
 09. Aceitar encomenda | Administração poderá confirmar uma encomenda aberta, transformando ela em um pedido | Prioridade Alta |

@@ -17,7 +17,7 @@
 
 ## Fluxo Alternativo - Seleção por Categoria
 | Ações do ator | Ações do sistema |
-| :-----------------: |:-----------------: | 
+| :-----------------: | :-----------------: | 
 | 1.1 - O Cliente ou Administração seleciona a categoria desejada na header da página. | |  
 | | (Retorna ao passo 2 do fluxo principal) |
 

@@ -17,7 +17,7 @@
 
 ## Fluxo Alternativo - Cancelar Produto
 | Ações do ator | Ações do sistema |
-| :-----------------: |:-----------------: |
+| :-----------------: | :-----------------: |
 | 1.1 Administração clica no botão "Sair". | |
 | | 1.2 Sistema fecha o formulário e retornar para á página de usuário. |
 
