@@ -1,21 +1,21 @@
 <form>
-    <input type="nome" [formField]="usuarioForm.nome">
+    <input type="nome" [formField]="usuarioForm.nome" placeholder="Nome">
 
-    <input type="email" [formField]="usuarioForm.email">
+    <input type="email" [formField]="usuarioForm.email" placeholder="Email">
 
-    <input type="celular" [formField]="usuarioForm.celular">
+    <input type="celular" [formField]="usuarioForm.celular" placeholder="Celular">
 
     <div formGroupName="address">
         <h3>Informação de Localização</h3>
 
-        <input type="estado" [formField]="usuarioForm.estado">
+        <input type="estado" [formField]="usuarioForm.estado" placeholder="Estado">
 
-        <input type="cidade" [formField]="usuarioForm.cidade">
+        <input type="cidade" [formField]="usuarioForm.cidade" placeholder="Cidade">
 
-        <input type="rua" [formField]="usuarioForm.rua">
+        <input type="rua" [formField]="usuarioForm.rua" placeholder="Rua">
 
-        <input type="numero" [formField]="usuarioForm.numero">
+        <input type="numero" [formField]="usuarioForm.numero" placeholder="Número">
     </div>
 
-    <button type="submit"> Salvar </button>
+    <button type="submit" class="button"> Salvar </button>
 </form>

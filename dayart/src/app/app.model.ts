@@ -1,14 +1,16 @@
 export interface Produto {
-    id: number;
+    id?: number;
     nome: string;
+    descricao: string;
     estoque: number;
+    preco: number;
 }
 
 export interface Usuario {
-    id: number;
+    id?: number;
     nome: string;
     email: string;
-    celular: number;
+    celular: string;
     localizacao:{
         estado: string,
         cidade: string,

@@ -1,0 +1,43 @@
+<table id="tabela-produtos" class="table-fixed">
+  <caption class="caption-top">Produtos Cadastrados</caption>
+  <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Em Produção</th>
+        <th>Alterar</th>
+        <th>Deletar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (produto of produtos(); track produto.nome; let i = $index) {
+        <tr>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.quantidade }}</td>
+            <td>{{ produto.emProducao ? 'Sim' : 'Não' }}</td>
+            <td>
+            <app-produto-atualizar
+                [produtos]="produtos"
+                [produtoSelecionado]="produto"
+                [index]="i">
+            </app-produto-atualizar>
+            </td>
+            <td>
+            <app-produto-deletar
+                [produto]="produto"
+                (deletar)="deletarProduto($event)">
+            </app-produto-deletar>
+            </td>
+        </tr>
+    } @empty {
+        <tr>
+            <td colspan="5">Nenhum produto cadastrado.</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@if (mensagem()) {
+    <p>{{ mensagem() }}</p>
+}

@@ -1,7 +1,11 @@
 <form>
-    <input type="nome" [formField]="produtoForm.nome">
+    <input type="nome" [formField]="produtoForm.nome" placeholder="Nome">
+    
+    <input type="descricao" [formField]="produtoForm.descricao" placeholder="Descrição">
 
-    <input type="estoque" [formField]="produtoForm.estoque">
+    <input type="estoque" [formField]="produtoForm.estoque" placeholder="Estoque">
 
-    <button type="submit"> Salvar </button>
+    <input type="preco" [formField]="produtoForm.preco" placeholder="Preço">
+
+    <button type="submit" class="button"> Salvar </button>
 </form>

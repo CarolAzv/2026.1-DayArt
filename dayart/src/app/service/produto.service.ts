@@ -1,20 +1,36 @@
-import { Injectable } from '@angular/core';
-import { produtoData } from '../form/produto.form';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Produto } from '../app.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class ProdutoService {
   private readonly chave = 'produtos';
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  listar(): produtoData[] {
-    const json = localStorage.getItem(this.chave);
-    return json ? JSON.parse(json) : [];
+  listar(): Produto[] {
+    if (!this.isBrowser) return []
+    try {
+      const json = localStorage.getItem(this.chave);
+      return json ? JSON.parse(json) : [];
+    } catch {
+        return []
+    }
   }
 
-  salvar(produto: produtoData[]): void {
-    localStorage.setItem(this.chave, JSON.stringify(produto));
+  salvar(produtos: Produto[]): void {
+    if (!this.isBrowser) return
+    localStorage.setItem(this.chave, JSON.stringify(produtos));
   }
 
-  deletar(produto: produtoData): void {
+  incluir(produto: Produto): void {
+    const produtos = this.listar();
+    produtos.push(produto);
+    this.salvar(produtos);
+  }
+
+  deletar(produto: Produto): void {
     const produtos = this.listar();
     const index = produtos.findIndex((item) => item.nome === produto.nome);
     if (index !== -1) {
@@ -23,7 +39,7 @@ export class ProdutoService {
     }
   }
 
-  atualizar(produtoAtualizado: produtoData): void {
+  atualizar(produtoAtualizado: Produto): void {
     const produtos = this.listar();
     const index = produtos.findIndex((item) => item.nome === produtoAtualizado.nome);
     if (index !== -1) {
