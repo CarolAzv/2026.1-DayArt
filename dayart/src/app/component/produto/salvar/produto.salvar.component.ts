@@ -1,6 +1,6 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormField, submit } from '@angular/forms/signals';
+import { FormField, form, required, submit } from '@angular/forms/signals';
 import { ButtonModule } from 'primeng/button';
 import { ProdutoService } from '../../../service/produto.service';
 import { CriarProdutoForm } from '../../../form/produto.form';

@@ -8,7 +8,7 @@ import { Usuario } from '../../../app.model';
 @Component({
   standalone: true,
   selector: 'app-alterar',
-  imports: [ButtonModule, FormField],
+  imports: [ButtonModule],
   templateUrl: './usuario.atualizar.html',
   styleUrl: './usuario.atualizar.css',
 })

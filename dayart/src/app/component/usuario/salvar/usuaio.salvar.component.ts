@@ -9,7 +9,7 @@ import { CriarUsuarioForm } from '../../../form/usuario.form';
 @Component({
     standalone: true,
     selector: 'app-salvar',
-    imports: [ButtonModule, FormField],
+    imports: [ButtonModule],
     templateUrl: './usuario.salvar.html',
     styleUrl: './usuario.salvar.css',
 })  

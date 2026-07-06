@@ -1,0 +1,28 @@
+<div id="principal-adicionar">
+    <form (submit)="salvar()" id="form-adicionar" class="form" autocomplete="off">
+        <div>
+            <h1>Nome do Produto</h1>
+            <input type="text" [formField]="formState.produtoForm.nome"  placeholder="Nome" label="Nome do Produto" />
+        </div>
+
+        <div>
+            <h1>Descrição do Produto</h1>
+            <input type="text" [formField]="formState.produtoForm.descricao" placeholder="Descrição" label="Descrição do Produto" />
+        </div>
+
+        <div>
+            <h1>Quantidade em Estoque</h1>
+            <input type="number" [formField]="formState.produtoForm.estoque" placeholder="Estoque" label="Quantidade em Estoque" />
+        </div>
+
+        <div>
+            <h1>Preço da Unidade</h1>
+            <input type="number" [formField]="formState.produtoForm.preco" placeholder="Preço" label="Preço da Unidade" />
+        </div>
+
+        <div>
+            <button type="submit" class="button">Salvar</button>
+            <button type="button" class="button" (click)="cancelar()">Cancelar</button>
+        </div>
+    </form>
+    

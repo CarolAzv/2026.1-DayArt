@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { CurrencyPipe } from '@angular/common';
 import { ProdutoService } from '../../../service/produto.service';
 import { Produto } from '../../../app.model';
 
@@ -10,7 +11,7 @@ import { ProdutoDeletarComponent } from '../deletar/produto.deletar.component';
 @Component({
   standalone: true,
   selector: 'app-produto-listar',
-  imports: [ButtonModule, ProdutoAtualizarComponent, ProdutoDeletarComponent],
+  imports: [ButtonModule, ProdutoAtualizarComponent, ProdutoDeletarComponent, CurrencyPipe],
   templateUrl: './produto.listar.html',
   styleUrl: './produto.listar.css',
 })

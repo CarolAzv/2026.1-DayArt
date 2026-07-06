@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+
+@theme {
+    --color-azul: #89CFF0;
+    --color-marrom: #ebddcc;
+    --color-offwhite: #fcf9f9;
+    --font-imperial_script: "Imperial Script", sans-serif;
+    --font-playfair: "Playfair", sans-serif; 
+}
+
+@layer components {
+    .button {
+        border: 2px solid var(--color-azul);
+        border-radius: 20px;
+        color: white;
+        /*hover: var(--color-marrom);*/
+        padding: --spacing(4);
+        background: var(--color-azul);
+    }
+
+    .form{
+        margin-bottom: 5%;
+        padding: 1%;
+        background: var(--color-offwhite);
+    }
+
+    .tabela-produtos{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border: black solid 2px;
+        text-align: center;
+    }
+}
