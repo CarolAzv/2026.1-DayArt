@@ -1,0 +1,38 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Day'Art</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<header class="header">
+  <div class="font-[imperial_script] text-5xl font-medium text-black"> <!-- class="title" -->
+    <h1>Day'Art</h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Início
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/produtos" routerLinkActive="active">
+          Produtos
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main" >
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p>&copy; 2026 Compras. All rights reserved.</p>
+  
+</footer>

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+
+@theme {
+    --color-azul: #89CFF0;
+    --color-marrom: #ebddcc;
+    --color-offwhite: #fcf9f9;
+    --font-imperial_script: "Imperial Script", sans-serif;
+    --font-playfair: "Playfair", sans-serif; 
+}
+
+@layer components {
+    .button {
+        border: 2px solid var(--color-azul);
+        border-radius: 20px;
+        color: white;
+        /*hover: var(--color-marrom);*/
+        padding: --spacing(4);
+        background: var(--color-azul);
+    }
+
+    .form{
+        border: 2px solid var(--color-azul);
+        margin-bottom: 5%;
+        padding: 1%;
+        background: var(--color-offwhite);
+        width: 50%;
+    }
+}
+
+
+/* Main content */
+main{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.content{
+    align-items: center;
+}
+
+.divider{
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#form-adicionar{
+    border: 2px solid #89CFF0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
