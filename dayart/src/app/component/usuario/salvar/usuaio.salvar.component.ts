@@ -5,17 +5,14 @@ import { ButtonModule } from 'primeng/button';
 import { UsuarioService } from '../../../service/usuario.service';
 import { CriarUsuarioForm } from '../../../form/usuario.form';
 
-
 @Component({
     standalone: true,
     selector: 'app-salvar',
     imports: [ButtonModule],
     templateUrl: './usuario.salvar.html',
     styleUrl: './usuario.salvar.css',
-})  
-
-
-export class UsuarioSalvarComponent{
+})
+export class UsuarioSalvarComponent implements OnInit {
     private readonly usuarioService = inject(UsuarioService);
     private readonly route = inject(ActivatedRoute);
     private readonly router = inject(Router);
@@ -27,11 +24,14 @@ export class UsuarioSalvarComponent{
     ngOnInit(): void {
         const nome = this.route.snapshot.queryParamMap.get('nome');
         if (nome) {
-            const encontrado = this.usuarioService.listar().find((u) => u.nome === nome);
-
-            if (encontrado) {
-                this.formState = CriarUsuarioForm(encontrado);
-            }
+            this.usuarioService.listar().subscribe({
+                next: (lista) => {
+                    const encontrado = lista.find((usuario) => usuario.nome === nome);
+                    if (encontrado) {
+                        this.formState = CriarUsuarioForm(encontrado);
+                    }
+                },
+            });
         }
     }
 
@@ -44,12 +44,16 @@ export class UsuarioSalvarComponent{
             const eEdicao = this.route.snapshot.queryParamMap.has('nome');
 
             if (eEdicao) {
-                this.usuarioService.atualizar(usuario);
+                this.usuarioService.atualizar(usuario).subscribe({
+                    next: () => this.router.navigate(['/users']),
+                    error: () => this.mensagem.set('Não foi possível atualizar o usuário.'),
+                });
             } else {
-                this.usuarioService.incluir(usuario);
+                this.usuarioService.incluir(usuario).subscribe({
+                    next: () => this.router.navigate(['/users']),
+                    error: () => this.mensagem.set('Não foi possível salvar o usuário.'),
+                });
             }
-
-            this.router.navigate(['/users']);
         });
     }
 

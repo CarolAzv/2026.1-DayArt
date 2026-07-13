@@ -1,50 +1,30 @@
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Usuario } from '../app.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService {
-  private readonly chave = 'usuarios';
-  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = '/api/usuarios';
 
-  listar(): Usuario[] {
-    if (!this.isBrowser) return []
-    try {
-      const json = localStorage.getItem(this.chave);
-      return json ? JSON.parse(json) : [];
-    } catch {
-        return []
-    }
+  listar(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(this.apiUrl);
   }
 
-  salvar(usuarios: Usuario[]): void {
-    if (!this.isBrowser) return
-    localStorage.setItem(this.chave, JSON.stringify(usuarios));
+  incluir(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.apiUrl, usuario);
   }
 
-  incluir(usuario: Usuario): void {
-    const usuarios = this.listar();
-    usuarios.push(usuario);
-    this.salvar(usuarios);
+  atualizar(usuario: Usuario): Observable<Usuario> {
+    const id = usuario.id ?? usuario.nome;
+    return this.http.put<Usuario>(`${this.apiUrl}/${encodeURIComponent(String(id))}`, usuario);
   }
 
-  deletar(usuario: Usuario): void {
-    const usuarios = this.listar();
-    const index = usuarios.findIndex((item) => item.nome === usuario.nome);
-    if (index !== -1) {
-      usuarios.splice(index, 1);
-      this.salvar(usuarios);
-    }
-  }
-
-  atualizar(usuarioAtualizado: Usuario): void {
-    const usuarios = this.listar();
-    const index = usuarios.findIndex((item) => item.nome === usuarioAtualizado.nome);
-    if (index !== -1) {
-      usuarios[index] = usuarioAtualizado;
-      this.salvar(usuarios);
-    }
+  deletar(usuario: Usuario): Observable<void> {
+    const id = usuario.id ?? usuario.nome;
+    return this.http.delete<void>(`${this.apiUrl}/${encodeURIComponent(String(id))}`);
   }
 }

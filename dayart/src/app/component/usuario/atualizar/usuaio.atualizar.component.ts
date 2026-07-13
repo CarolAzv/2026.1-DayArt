@@ -12,9 +12,7 @@ import { Usuario } from '../../../app.model';
   templateUrl: './usuario.atualizar.html',
   styleUrl: './usuario.atualizar.css',
 })
-
-
-export class UsuarioAtualizarComponent implements OnInit { // ← typo corrigido
+export class UsuarioAtualizarComponent implements OnInit {
   private readonly usuarioService = inject(UsuarioService);
   protected readonly editando = signal(false);
 
@@ -43,7 +41,7 @@ export class UsuarioAtualizarComponent implements OnInit { // ← typo corrigido
   alternarEdicao(): void {
     this.editando.update((atual) => !atual);
     if (!this.editando()) {
-      this.resetar(); // ao fechar, restaura dados originais
+      this.resetar();
     }
   }
 
@@ -53,16 +51,18 @@ export class UsuarioAtualizarComponent implements OnInit { // ← typo corrigido
     submit(this.usuarioForm, async () => {
       const usuarioAtualizado: Usuario = { ...this.usuarioModel() };
 
-      this.usuarioService.atualizar(usuarioAtualizado);
+      this.usuarioService.atualizar(usuarioAtualizado).subscribe({
+        next: () => {
+          this.usuarios.update((lista) => {
+            const atualizada = [...lista];
+            atualizada[this.index] = usuarioAtualizado;
+            return atualizada;
+          });
 
-      this.usuarios.update((lista) => {
-        const atualizada = [...lista];
-        atualizada[this.index] = usuarioAtualizado;
-        return atualizada;
+          this.editando.set(false);
+          this.resetar();
+        },
       });
-
-      this.editando.set(false);
-      this.resetar();
     });
   }
 

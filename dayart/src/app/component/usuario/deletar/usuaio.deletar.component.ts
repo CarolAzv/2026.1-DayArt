@@ -11,8 +11,6 @@ import { inject } from '@angular/core';
     templateUrl: './usuario.deletar.html',
     styleUrl: './usuario.deletar.css',
 })
-
-
 export class UsuarioDeletarComponent {
     private readonly usuarioService = inject(UsuarioService);
     readonly usuario = input.required<Usuario>();
@@ -23,7 +21,8 @@ export class UsuarioDeletarComponent {
 
         if (!confirm('Deseja remover este usuário?')) return;
 
-        this.usuarioService.deletar(usuario);
-        this.deletar.emit(usuario);
+        this.usuarioService.deletar(usuario).subscribe({
+            next: () => this.deletar.emit(usuario),
+        });
     }
 }

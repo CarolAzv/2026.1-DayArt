@@ -1,10 +1,9 @@
-import { Component, inject, Input, OnInit, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormField, form, required, submit } from '@angular/forms/signals';
+import { FormField, submit } from '@angular/forms/signals';
 import { ButtonModule } from 'primeng/button';
 import { ProdutoService } from '../../../service/produto.service';
 import { CriarProdutoForm } from '../../../form/produto.form';
-
 
 @Component({
     standalone: true,
@@ -12,10 +11,8 @@ import { CriarProdutoForm } from '../../../form/produto.form';
     imports: [ButtonModule, FormField],
     templateUrl: './produto.salvar.html',
     styleUrl: './produto.salvar.css',
-})  
-
-
-export class ProdutoSalvarComponent{
+})
+export class ProdutoSalvarComponent implements OnInit {
     private readonly produtoService = inject(ProdutoService);
     private readonly route = inject(ActivatedRoute);
     private readonly router = inject(Router);
@@ -27,11 +24,14 @@ export class ProdutoSalvarComponent{
     ngOnInit(): void {
         const nome = this.route.snapshot.queryParamMap.get('nome');
         if (nome) {
-            const encontrado = this.produtoService.listar().find((u) => u.nome === nome);
-
-            if (encontrado) {
-                this.formState = CriarProdutoForm(encontrado);
-            }
+            this.produtoService.listar().subscribe({
+                next: (lista) => {
+                    const encontrado = lista.find((produto) => produto.nome === nome);
+                    if (encontrado) {
+                        this.formState = CriarProdutoForm(encontrado);
+                    }
+                },
+            });
         }
     }
 
@@ -44,12 +44,16 @@ export class ProdutoSalvarComponent{
             const eEdicao = this.route.snapshot.queryParamMap.has('nome');
 
             if (eEdicao) {
-                this.produtoService.atualizar(produto);
+                this.produtoService.atualizar(produto).subscribe({
+                    next: () => this.router.navigate(['/produtos']),
+                    error: () => this.mensagem.set('Não foi possível atualizar o produto.'),
+                });
             } else {
-                this.produtoService.incluir(produto);
+                this.produtoService.incluir(produto).subscribe({
+                    next: () => this.router.navigate(['/produtos']),
+                    error: () => this.mensagem.set('Não foi possível salvar o produto.'),
+                });
             }
-
-            this.router.navigate(['/produtos']);
         });
     }
 
