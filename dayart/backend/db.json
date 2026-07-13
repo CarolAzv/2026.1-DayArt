@@ -1,0 +1,33 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Produto Demo",
+      "descricao": "Produto inicial para demonstração",
+      "estoque": 10,
+      "preco": 49.9
+    },
+    {
+      "nome": "test2",
+      "descricao": "testando testando",
+      "preco": 3,
+      "estoque": 1,
+      "id": "RVTmiA7Ngq4"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Usuário Demo",
+      "email": "demo@dayart.com",
+      "celular": "11999999999",
+      "localizacao": {
+        "estado": "SP",
+        "cidade": "São Paulo",
+        "rua": "Rua Demo",
+        "numero": 123
+      }
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

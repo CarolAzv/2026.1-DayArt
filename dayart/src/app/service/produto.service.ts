@@ -1,50 +1,30 @@
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Produto } from '../app.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProdutoService {
-  private readonly chave = 'produtos';
-  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = '/api/produtos';
 
-  listar(): Produto[] {
-    if (!this.isBrowser) return []
-    try {
-      const json = localStorage.getItem(this.chave);
-      return json ? JSON.parse(json) : [];
-    } catch {
-        return []
-    }
+  listar(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.apiUrl);
   }
 
-  salvar(produtos: Produto[]): void {
-    if (!this.isBrowser) return
-    localStorage.setItem(this.chave, JSON.stringify(produtos));
+  incluir(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(this.apiUrl, produto);
   }
 
-  incluir(produto: Produto): void {
-    const produtos = this.listar();
-    produtos.push(produto);
-    this.salvar(produtos);
+  atualizar(produto: Produto): Observable<Produto> {
+    const id = produto.id ?? produto.nome;
+    return this.http.put<Produto>(`${this.apiUrl}/${encodeURIComponent(String(id))}`, produto);
   }
 
-  deletar(produto: Produto): void {
-    const produtos = this.listar();
-    const index = produtos.findIndex((item) => item.nome === produto.nome);
-    if (index !== -1) {
-      produtos.splice(index, 1);
-      this.salvar(produtos);
-    }
-  }
-
-  atualizar(produtoAtualizado: Produto): void {
-    const produtos = this.listar();
-    const index = produtos.findIndex((item) => item.nome === produtoAtualizado.nome);
-    if (index !== -1) {
-      produtos[index] = produtoAtualizado;
-      this.salvar(produtos);
-    }
+  deletar(produto: Produto): Observable<void> {
+    const id = produto.id ?? produto.nome;
+    return this.http.delete<void>(`${this.apiUrl}/${encodeURIComponent(String(id))}`);
   }
 }

@@ -5,7 +5,6 @@ import { FormField, form, required, submit } from '@angular/forms/signals';
 import { ProdutoService } from '../../../service/produto.service';
 import { Produto } from '../../../app.model';
 
-
 @Component({
   standalone: true,
   selector: 'app-produto-atualizar',
@@ -13,9 +12,7 @@ import { Produto } from '../../../app.model';
   templateUrl: './produto.atualizar.html',
   styleUrl: './produto.atualizar.css',
 })
-
-
-export class ProdutoAtualizarComponent implements OnInit { // ← typo corrigido
+export class ProdutoAtualizarComponent implements OnInit {
   private readonly produtoService = inject(ProdutoService);
   protected readonly editando = signal(false);
 
@@ -44,7 +41,7 @@ export class ProdutoAtualizarComponent implements OnInit { // ← typo corrigido
   alternarEdicao(): void {
     this.editando.update((atual) => !atual);
     if (!this.editando()) {
-      this.resetar(); // ao fechar, restaura dados originais
+      this.resetar();
     }
   }
 
@@ -54,16 +51,18 @@ export class ProdutoAtualizarComponent implements OnInit { // ← typo corrigido
     submit(this.produtoForm, async () => {
       const produtoAtualizado: Produto = { ...this.produtoModel() };
 
-      this.produtoService.atualizar(produtoAtualizado);
+      this.produtoService.atualizar(produtoAtualizado).subscribe({
+        next: () => {
+          this.produtos.update((lista) => {
+            const atualizada = [...lista];
+            atualizada[this.index] = produtoAtualizado;
+            return atualizada;
+          });
 
-      this.produtos.update((lista) => {
-        const atualizada = [...lista];
-        atualizada[this.index] = produtoAtualizado;
-        return atualizada;
+          this.editando.set(false);
+          this.resetar();
+        },
       });
-
-      this.editando.set(false);
-      this.resetar();
     });
   }
 

@@ -15,8 +15,6 @@ import { ProdutoDeletarComponent } from '../deletar/produto.deletar.component';
   templateUrl: './produto.listar.html',
   styleUrl: './produto.listar.css',
 })
-
-
 export class ProdutoListarComponent {
   private readonly produtoService = inject(ProdutoService);
 
@@ -30,17 +28,18 @@ export class ProdutoListarComponent {
   carregarProdutos(): void {
     this.mensagem.set(null);
 
-    try {
-      const lista = this.produtoService.listar();
-      this.produtos.set(lista);
-    } catch {
-      this.mensagem.set('Nada achado aqui, volte mais tarde.');
-    }
+    this.produtoService.listar().subscribe({
+      next: (lista) => this.produtos.set(lista),
+      error: () => this.mensagem.set('Nada achado aqui, volte mais tarde.'),
+    });
   }
 
   deletarProduto(produto: Produto): void {
-    this.produtoService.deletar(produto);
-
-    this.produtos.update((lista) => lista.filter((p) => p.nome !== produto.nome));
+    this.produtoService.deletar(produto).subscribe({
+      next: () => {
+        this.produtos.update((lista) => lista.filter((p) => p.id !== produto.id && p.nome !== produto.nome));
+      },
+      error: () => this.mensagem.set('Não foi possível remover o produto.'),
+    });
   }
 }

@@ -11,8 +11,6 @@ import { inject } from '@angular/core';
     templateUrl: './produto.deletar.html',
     styleUrl: './produto.deletar.css',
 })
-
-
 export class ProdutoDeletarComponent {
     private readonly produtoService = inject(ProdutoService);
     readonly produto = input.required<Produto>();
@@ -23,7 +21,8 @@ export class ProdutoDeletarComponent {
 
         if (!confirm('Deseja remover este produto?')) return;
 
-        this.produtoService.deletar(produto);
-        this.deletar.emit(produto);
+        this.produtoService.deletar(produto).subscribe({
+            next: () => this.deletar.emit(produto),
+        });
     }
 }
