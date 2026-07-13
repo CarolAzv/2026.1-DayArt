@@ -13,14 +13,14 @@ Carolina Azevedo - Whatsapp (84) 99613-2365
 
 # Documentação
 
-1. [Documento de Visão](documentação/cdu/doc-visao.md)
-2. [Lista de Riscos Detalhado](documentação/visao/riscos-detalhamento.md)
-3. [Listagens dos CDUs](documentação/casos-de-uso/listagem.md)
-4. [Modelo de Casos de Uso](documentação/casos-de-uso/DiagramaCasosDeUso.png)
-5. [Modelo de Casos de Dominio](documentação/classes-de-dominio/DiagramaClassesDeDominio.png)
-6. [Modelo de Atividade](documentação/atividade/DiagramaAtividade.png)
-7. [Modelo de Deployment](documentação/deployment/DiagramaDeployment.png)
-8. [Modelo de Pacote](documentação/pacote/DiagramaPacote.png)
+1. [Documento de Visão](documentacao/cdu/doc-visao.md)
+2. [Lista de Riscos Detalhado](documentacao/visao/riscos-detalhamento.md)
+3. [Listagens dos CDUs](documentacao/casos-de-uso/listagem.md)
+4. [Modelo de Casos de Uso](documentacao/casos-de-uso/DiagramaCasosDeUso.png)
+5. [Modelo de Casos de Dominio](documentacao/classes-de-dominio/DiagramaClassesDeDominio.png)
+6. [Modelo de Atividade](documentacao/atividade/DiagramaAtividade.png)
+7. [Modelo de Deployment](documentacao/deployment/DiagramaDeployment.png)
+8. [Modelo de Pacote](documentacao/pacote/DiagramaDePacote.png)
 
 # Manual da Desenvolvedor
 
