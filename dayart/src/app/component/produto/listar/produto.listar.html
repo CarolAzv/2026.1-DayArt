@@ -20,13 +20,13 @@
             <td>{{ produto.preco | currency:'BRL' }}</td>
             <td>{{ produto.estoque }}</td>
             <td>{{ produto.preco }}</td>
+
             <td class="acao-cell">
-                <app-produto-atualizar
-                    [produtos]="produtos"
-                    [produtoSelecionado]="produto"
-                    [index]="i">
-                </app-produto-atualizar>
+                <a [routerLink]="['/produtos', produto.id ?? produto.nome]">
+                    <p-button label="Alterar" icon="pi pi-pencil"></p-button>
+                </a>
             </td>
+
             <td class="acao-cell">
                 <app-produto-deletar
                     [produto]="produto"

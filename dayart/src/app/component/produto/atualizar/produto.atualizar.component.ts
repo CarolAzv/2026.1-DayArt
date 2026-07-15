@@ -1,9 +1,10 @@
-import { Component, inject, Input, OnInit, signal } from '@angular/core';
-import { WritableSignal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { FormField, form, required, submit } from '@angular/forms/signals';
 import { ProdutoService } from '../../../service/produto.service';
 import { Produto } from '../../../app.model';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   standalone: true,
@@ -13,12 +14,13 @@ import { Produto } from '../../../app.model';
   styleUrl: './produto.atualizar.css',
 })
 export class ProdutoAtualizarComponent implements OnInit {
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   private readonly produtoService = inject(ProdutoService);
   protected readonly editando = signal(false);
 
-  @Input() produtos!: WritableSignal<Produto[]>;
-  @Input() produtoSelecionado!: Produto;
-  @Input() index!: number;
+  // guarda o produto original vindo da API, usado no reset
+  protected produtoSelecionado!: Produto;
 
   protected readonly produtoModel = signal<Produto>({
     nome: '',
@@ -35,17 +37,25 @@ export class ProdutoAtualizarComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.produtoModel.set({ ...this.produtoSelecionado });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.produtoService.buscarPorId(id).subscribe({
+        next: (produto) => {
+          this.produtoSelecionado = produto;
+          this.produtoModel.set({ ...produto });
+        },
+      });
+    }
   }
 
-  alternarEdicao(): void {
+  atualizarEdicao(): void {
     this.editando.update((atual) => !atual);
     if (!this.editando()) {
       this.resetar();
     }
   }
 
-  alterarProduto(event: Event): void {
+  atualizarProduto(event: Event): void {
     event.preventDefault();
 
     submit(this.produtoForm, async () => {
@@ -53,14 +63,8 @@ export class ProdutoAtualizarComponent implements OnInit {
 
       this.produtoService.atualizar(produtoAtualizado).subscribe({
         next: () => {
-          this.produtos.update((lista) => {
-            const atualizada = [...lista];
-            atualizada[this.index] = produtoAtualizado;
-            return atualizada;
-          });
-
           this.editando.set(false);
-          this.resetar();
+          this.router.navigate(['/produtos']);
         },
       });
     });

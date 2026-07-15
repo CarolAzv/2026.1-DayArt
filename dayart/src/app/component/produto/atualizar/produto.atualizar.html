@@ -1,5 +1,5 @@
 @if (editando()) {
-  <form (submit)="alterarProduto($event)" class="edicao-form">
+  <form (submit)="atualizarProduto($event)" class="edicao-form">
     <input type="text"   [formField]="produtoForm.nome"      placeholder="Nome" />
     <input type="text"   [formField]="produtoForm.descricao" placeholder="Descrição" />
     <input type="number" [formField]="produtoForm.estoque"   placeholder="Estoque" />
@@ -7,9 +7,9 @@
 
     <div class="buttons flex gap-2">
       <button type="submit" class="p-button-success">Salvar</button>
-      <button type="button" class="p-button-secondary" (click)="alternarEdicao()">Cancelar</button>
+      <button type="button" class="p-button-secondary" (click)="atualizarEdicao()">Cancelar</button>
     </div>
   </form>
 } @else {
-  <button type="button" class="p-button p-button-sm button" (click)="alternarEdicao()">Alterar</button>
+  <button type="button" class="p-button p-button-sm button" (click)="atualizarEdicao()">Alterar</button>
 }

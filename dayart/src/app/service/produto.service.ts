@@ -14,6 +14,10 @@ export class ProdutoService {
     return this.http.get<Produto[]>(this.apiUrl);
   }
 
+  buscarPorId(id: string): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/${id}`);
+  }
+
   incluir(produto: Produto): Observable<Produto> {
     return this.http.post<Produto>(this.apiUrl, produto);
   }

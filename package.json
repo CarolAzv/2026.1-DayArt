@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
+    "json-server": "^0.17.1",
     "primeng": "^21.1.9"
   }
 }

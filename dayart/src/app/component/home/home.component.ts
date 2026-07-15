@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { Produto } from '../../app.model';
 import { ProdutoService } from '../../service/produto.service';
@@ -9,7 +8,7 @@ import { ProdutoSalvarComponent } from '../produto/salvar/produto.salvar.compone
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, ProdutoListarComponent, ProdutoSalvarComponent],
+  imports: [ProdutoListarComponent, ProdutoSalvarComponent],
   templateUrl: 'home.html',
   styleUrls: ['home.css']
 })

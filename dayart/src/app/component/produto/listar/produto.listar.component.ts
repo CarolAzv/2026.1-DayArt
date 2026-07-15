@@ -3,20 +3,21 @@ import { ButtonModule } from 'primeng/button';
 import { CurrencyPipe } from '@angular/common';
 import { ProdutoService } from '../../../service/produto.service';
 import { Produto } from '../../../app.model';
-
-import { ProdutoAtualizarComponent } from '../atualizar/produto.atualizar.component';
 import { ProdutoDeletarComponent } from '../deletar/produto.deletar.component';
+import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
   standalone: true,
   selector: 'app-produto-listar',
-  imports: [ButtonModule, ProdutoAtualizarComponent, ProdutoDeletarComponent, CurrencyPipe],
+  imports: [ButtonModule, ProdutoDeletarComponent, CurrencyPipe, RouterLink],
   templateUrl: './produto.listar.html',
   styleUrl: './produto.listar.css',
 })
 export class ProdutoListarComponent {
   private readonly produtoService = inject(ProdutoService);
+  private readonly http = inject(HttpClient);
 
   produtos = signal<Produto[]>([]);
   mensagem = signal<string | null>(null);
